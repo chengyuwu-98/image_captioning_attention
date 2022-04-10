@@ -21,6 +21,7 @@ to be updated later...
 
 ## Getting started in Colab:
 
-[![My Colab notebook](https://colab.research.google.com/drive/1z1sI5wVmoflOggLfIuIIj7qQ0xAICtgn?usp=sharing)
+[![My Colab notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1z1sI5wVmoflOggLfIuIIj7qQ0xAICtgn?usp=sharing) 
+
 
 Download the Image folder and captions.txt from the above dataset, zip the Image folder and put it in the Colab working directory with captions.txt
