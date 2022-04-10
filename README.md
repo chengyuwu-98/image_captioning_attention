@@ -23,5 +23,4 @@ to be updated later...
 
 [![My Colab notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1z1sI5wVmoflOggLfIuIIj7qQ0xAICtgn?usp=sharing) 
 
-
 Download the Image folder and captions.txt from the above dataset, zip the Image folder and put it in the Colab working directory with captions.txt
