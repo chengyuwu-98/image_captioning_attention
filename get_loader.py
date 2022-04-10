@@ -14,7 +14,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 caption_file = './flickr8k/captions.txt'
 df = pd.read_csv(caption_file)
 
-# Download with: python -m spacy download en
 spacy_eng = spacy.load('en_core_web_sm')
 
 
