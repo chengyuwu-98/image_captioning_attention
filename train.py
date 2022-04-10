@@ -29,19 +29,6 @@ model = EncoderDecoder(
 
 criterion = nn.CrossEntropyLoss(ignore_index=dataset.vocab.stoi["<PAD>"])
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
-def save_model(model,num_epochs):
-    model_state = {
-        'num_epochs':num_epochs,
-        'embed_size':embed_size,
-        'vocab_size':len(dataset.vocab),
-        'attention_dim':attention_dim,
-        'encoder_dim':encoder_dim,
-        'decoder_dim':decoder_dim,
-        'state_dict':model.state_dict()
-    }
-
-    torch.save(model_state,'attention_model_state.pth')
     
 
 for epoch in range(1,num_epochs+1):   
@@ -80,4 +67,5 @@ for epoch in range(1,num_epochs+1):
             model.train()
         
     #save the latest model
-    save_model(model,epoch)
+    PATH = './models/model.pt'
+    torch.save(model.state_dict(), PATH)

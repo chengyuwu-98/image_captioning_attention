@@ -21,7 +21,7 @@ def main():
     
     PATH = './models/model.pt'
     final_model.load_state_dict(torch.load(PATH, map_location=device))
-  
+
   
     def show_image(img, title=None):
         
