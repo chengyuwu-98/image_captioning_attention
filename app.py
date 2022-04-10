@@ -1,22 +1,6 @@
 import torch
-import torchvision.transforms as transforms
-from PIL import Image
 import matplotlib.pyplot as plt
-import os
-import numpy as np
-import pandas as pd
-from collections import Counter
-import spacy
 import torch
-import torch.nn as nn
-from torch.nn.utils.rnn import pad_sequence
-import torchvision.transforms as T
-import matplotlib.pyplot as plt
-from PIL import Image
-import torch.nn.functional as F
-import torch.optim as optim
-import torchvision.models as models
-from torch.utils.data import DataLoader,Dataset
 from model import EncoderDecoder
 from get_loader import dataset, data_loader
 
@@ -35,7 +19,7 @@ def main():
     ).to(device)
 
     
-    PATH = './models/model1.pt'
+    PATH = './models/model.pt'
     final_model.load_state_dict(torch.load(PATH, map_location=device))
   
   
