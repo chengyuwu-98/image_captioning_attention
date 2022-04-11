@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from get_images import get_images, get_path
+from get_images import get_images, get_path, get_directory
 from get_prediction import get_prediction
 from generate_html import generate_html
 from model import EncoderDecoder
@@ -28,11 +28,11 @@ final_model.load_state_dict(torch.load(PATH, map_location=device))
 final_model.eval()
 
 # define the function to get the images from the url and predicted the class
-def get_image_class(path):
+def get_image_class(dir):
     # get images from the URL and store it in a given path
-    get_images(path)
+    get_images(dir)
     # predict the image class of the images with provided directory
-    path = get_path(path)
+    path = get_path(dir)
     images_with_tags = get_prediction(final_model, path)
     # generate html file to render once we predict the classes
     generate_html(images_with_tags)
