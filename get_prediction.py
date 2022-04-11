@@ -4,6 +4,7 @@ import json
 import io
 import glob
 from PIL import Image
+from get_loader import dataset, data_loader
 
 def transform_image(image_bytes):
     my_transforms = transforms.Compose([transforms.Resize(255),
@@ -19,6 +20,7 @@ def transform_image(image_bytes):
 def get_caps_from(image_path, final_model):
     # generate the caption
     final_model.eval()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     with open(image_path, 'rb') as file:
         image_bytes = file.read()
     # transform the image
@@ -35,6 +37,6 @@ def get_prediction(model, path_to_directory):
     files = glob.glob(path_to_directory+'/*')
     image_with_tags = {}
     for image_file in files:
-        image_with_tags[image_file] = get_caps_from(model, image_path=image_file)
+        image_with_tags[image_file] = get_caps_from(image_file, model)
 
     return image_with_tags
