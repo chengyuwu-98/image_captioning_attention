@@ -4,6 +4,7 @@ import torch
 from model import EncoderDecoder
 from get_loader import dataset, data_loader
 
+#testing the app in local env
 
 def main():
 
