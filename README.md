@@ -14,6 +14,7 @@ to be updated later...
 4. pip install -r requirements.txt
 5. Open Python Shell and run:
     import spacy
+    
     from spacy.cli.download import download
     download(model="en_core_web_sm")
 6. Run app.py
