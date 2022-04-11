@@ -1,3 +1,42 @@
+import glob
+
+html_string_start = """
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+#left-bar {
+  position: fixed;
+  display: table-cell;
+  top: 100;
+  bottom: 10;
+  left: 10;
+  width: 35%;
+  overflow-y: auto;
+}
+#right-bar {
+  position: fixed;
+  display: table-cell;
+  top: 100;
+  bottom: 10;
+  right: 10;
+  width: 45%;
+  overflow-y: auto;
+}
+</style>
+<body>
+<center><h1> Image Classification </h1></center>
+<div id= "left-bar" >
+"""
+
+
+html_string_end = """
+</body>
+</html>
+"""
+
+
 def get_picture_html(path, tag):
     image_html = """<p> {tag_name} </p> <picture> <img src= "../{path_name}"  height="300" width="400"> </picture>"""
     return image_html.format(tag_name=tag, path_name=path)
@@ -35,3 +74,7 @@ def generate_html(image_class_dict):
     # loop through the value_counts and add a count of class to the html file
     for value in value_counts.keys():
         count_html += get_count_html(value, value_counts[value])
+
+    file_content = html_string_start + picture_html + """</div> <div id= "right-bar" >""" + count_html + "</div>" + html_string_end
+    with open('templates/image_class.html', 'w') as f:
+        f.write(file_content)
