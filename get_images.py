@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import time
+
 
 def get_path(url):
     return "static/URL_" + str(url.replace("/", "_"))
