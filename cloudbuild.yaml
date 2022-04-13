@@ -19,7 +19,7 @@ steps:
   args: [
    'rollout', 
    'restart', 
-   'deployment/image'
+   'deployment/imagedevep'
    #'container-regression=us.gcr.io/regression-flask/container-regression:latest'
   ]
   env:
